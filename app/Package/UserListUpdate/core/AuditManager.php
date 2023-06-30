@@ -11,7 +11,14 @@ class AuditManager
     {
     }
 
-    public function AddRecord($files, string $visitor_name, DateTime $time_of_visit)
+    /**
+     * @param $files
+     * @param string $visitor_name 訪問者名
+     * @param DateTime $time_of_visit 訪問日時を示すオブジェクト
+     *
+     * @return FileUpdate Update情報を格納したオブジェクト
+     */
+    public function AddRecord(array $files, string $visitor_name, DateTime $time_of_visit): FileUpdate
     {
         ksort($files);
         $new_record = $visitor_name . ";" . $time_of_visit->format('Y/m/d H:i:s')."\r\n";

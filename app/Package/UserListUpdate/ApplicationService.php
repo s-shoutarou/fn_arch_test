@@ -11,7 +11,7 @@ class ApplicationService
     private readonly AuditManager $audit_manager;
     private readonly Persister $persister;
 
-    public function __construct(private readonly string $directory_name, int $max_entries_per_file = 3)
+    public function __construct(private readonly string $directory_name, private readonly int $max_entries_per_file = 3)
     {
         $this->persister = new Persister();
         $this->audit_manager =  new AuditManager($max_entries_per_file);
