@@ -26,7 +26,7 @@ class AuditManager
         $current_file_index = count($files);
         $current_array_last_index = $current_file_index - 1;
 
-        $lines = $files[$current_array_last_index]->lines;
+        $lines = $files[$current_array_last_index]->lines ?? [];
 
         if($current_file_index === 0) {
             return new FileUpdate("audit_1.txt", $new_record);
