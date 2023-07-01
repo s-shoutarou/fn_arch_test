@@ -19,6 +19,7 @@ class UserListUpdateTest extends TestCase
         $sut = new AuditManager(3);
         $files = [];
 
+        //テスト対象システム => system under testを略して$sut
         $update = $sut->AddRecord(
             $files,
             "syu",
