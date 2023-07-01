@@ -16,9 +16,6 @@ class UserListController
      */
     public function update(Request $request)
     {
-        //Controllerは極力フロントエンドからサービスクラスへの入力の受け渡し
-        //およびフロントエンドへの出力の受け渡し以外のロジックを実装しない
-
         $file_directory = storage_path("app/"); // サービスクラス内で極力Laravelに依存した記述を避けたい
 
         (new ApplicationService($file_directory))->addRecord(
